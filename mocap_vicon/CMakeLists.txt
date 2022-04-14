@@ -50,3 +50,5 @@ target_link_libraries(mocap_vicon_node
   mocap_vicon_driver
   ${catkin_LIBRARIES}
 )
+
+file(COPY "launch/citrack_vicon.launch" DESTINATION ${CMAKE_CURRENT_BINARY_DIR})

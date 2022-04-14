@@ -1,0 +1,37 @@
+<launch>
+  <node pkg="mocap_vicon" type="mocap_vicon_node" name="vicon" output="screen">
+    <param name="server_address" value="192.168.1.39"/>
+    <param name="frame_rate" value="200"/>
+    <param name="max_accel" value="10.0"/>
+    <param name="publish_tf" value="true"/>
+    <param name="fixed_frame_id" value="vicon"/>
+    <rosparam param="model_list">[]</rosparam>
+    <remap from="/vicon/amiro1/odom" to="amiro1/odom"/>
+    <remap from="/vicon/amiro2/odom" to="amiro2/odom"/>
+    <remap from="/vicon/amiro3/odom" to="amiro3/odom"/>
+    <remap from="/vicon/amiro4/odom" to="amiro4/odom"/>
+    <remap from="/vicon/amiro5/odom" to="amiro5/odom"/>
+    <remap from="/vicon/amiro6/odom" to="amiro6/odom"/>
+    <remap from="/vicon/amiro7/odom" to="amiro7/odom"/>
+    <remap from="/vicon/amiro8/odom" to="amiro8/odom"/>
+    <remap from="/vicon/amiro9/odom" to="amiro9/odom"/>
+    <remap from="/vicon/amiro10/odom" to="amiro10/odom"/>
+    <remap from="/vicon/amiro11/odom" to="amiro11/odom"/>
+    <remap from="/vicon/amiro12/odom" to="amiro12/odom"/>
+    <remap from="/vicon/amiro13/odom" to="amiro13/odom"/>
+    <remap from="/vicon/amiro14/odom" to="amiro14/odom"/>
+    <remap from="/vicon/amiro15/odom" to="amiro15/odom"/>
+    <remap from="/vicon/amiro16/odom" to="amiro16/odom"/>
+    <remap from="/vicon/amiro17/odom" to="amiro17/odom"/>
+    <remap from="/vicon/amiro18/odom" to="amiro18/odom"/>
+    <remap from="/vicon/amiro19/odom" to="amiro19/odom"/>
+    <remap from="/vicon/amiro20/odom" to="amiro20/odom"/>
+  </node>
+
+  <node pkg="calibration" type="dynamic_transform_publisher" name="tf_citrack_floor_vicon">
+    <param name="tf" value="-0.1 -0.07 0.0 0 0 -1.570796"/>
+    <param name="source_frame" value="citrack/base_link"/>
+    <param name="target_frame" value="vicon"/>
+    <param name="rate" value="50.0"/>
+  </node>
+</launch>
