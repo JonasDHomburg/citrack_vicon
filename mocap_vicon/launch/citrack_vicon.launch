@@ -4,7 +4,7 @@
     <param name="frame_rate" value="200"/>
     <param name="max_accel" value="10.0"/>
     <param name="publish_tf" value="true"/>
-    <param name="fixed_frame_id" value="vicon"/>
+    <param name="fixed_frame_id" value="citrack/vicon"/>
     <rosparam param="model_list">[]</rosparam>
     <remap from="/vicon/amiro1/odom" to="amiro1/odom"/>
     <remap from="/vicon/amiro2/odom" to="amiro2/odom"/>
@@ -31,7 +31,7 @@
   <node pkg="calibration" type="dynamic_transform_publisher" name="tf_citrack_floor_vicon">
     <param name="tf" value="-0.1 -0.07 0.0 0 0 -1.570796"/>
     <param name="source_frame" value="citrack/base_link"/>
-    <param name="target_frame" value="vicon"/>
+    <param name="target_frame" value="citrack/vicon"/>
     <param name="rate" value="50.0"/>
   </node>
 </launch>
